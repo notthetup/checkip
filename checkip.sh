@@ -8,7 +8,12 @@ else
     lastip="0"
 fi
 
-if  [ "$lastip" != "$ipaddr" ]; then
-    date +%c >> $histlogfile
-    echo $ipaddr >> $histlogfile
+if [ "$lastip" == "" ]; then
+    	date +%c >> $histlogfile
+    	echo "No DNS :(" >> $histlogfile
+else
+    if  [ "$lastip" != "$ipaddr" ]; then
+    	date +%c >> $histlogfile
+    	echo $ipaddr >> $histlogfile
+    fi
 fi
