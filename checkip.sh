@@ -3,7 +3,7 @@ ValidIpAddressRegex="^([0-9]{1,3}\.){3}[0-9]{1,3}$";
 count=0;
 
 until [[ ("$ipaddr" =~ $ValidIpAddressRegex) || ($count > 5) ]] ; do
-    ipaddr=$(curl -s http://ipecho.net/plain)
+    ipaddr=$(bash getAPEIP.sh)
     count=$[count+1];
 done
 
