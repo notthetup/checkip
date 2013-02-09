@@ -3,7 +3,7 @@ ValidIpAddressRegex="^([0-9]{1,3}\.){3}[0-9]{1,3}$";
 count=0;
 
 until [[ ("$ipaddr" =~ $ValidIpAddressRegex) || ($count > 5) ]] ; do
-    ipaddr=$(bash getAPEIP.sh)
+    ipaddr=$(bash /home/chinmay/.checkip/getAPEIP.sh)
     count=$[count+1];
 done
 
